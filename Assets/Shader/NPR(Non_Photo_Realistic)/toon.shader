@@ -12,7 +12,7 @@ Shader "Custom/toon"
     {
         Tags { "RenderType" = "Opaque" }
 
-        cull front
+        cull front//면을 뒤집음.
 
         //1st pass
         CGPROGRAM
@@ -32,7 +32,7 @@ Shader "Custom/toon"
 
         // appdata_full : is Structure of VertexData (Position, color, tangent, normal texcoord...) 
         void vert( inout appdata_full v)
-        {
+        {   //각 버텍스를 노멀 방향으로 움직임.
             v.vertex.xyz = v.vertex.xyz + v.normal.xyz * 0.0005 *_OutlineSize * v.color.a; //VertexColor
         }
 
@@ -50,7 +50,7 @@ Shader "Custom/toon"
         {
             float4 final;
 
-            //Color
+            //Outline Color
             float3 OutlineColor2;
             OutlineColor2 = _OutlineColor.rgb * s.Albedo.rgb;
 
@@ -62,8 +62,8 @@ Shader "Custom/toon"
         ENDCG
 
 
+        cull back //아웃라인을 위해 뒤집은 면을 다시 되돌림.
         //2nd pass
-        cull back
         CGPROGRAM
        
         #pragma surface surf Toon

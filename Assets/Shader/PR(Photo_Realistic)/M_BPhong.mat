@@ -34,11 +34,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FakeSpecPow: 121
+    - _FakeSpecPow: 86
     - _RimPow: 5.9
+    - _RimPower: 3
     - _SpecPow: 151
     - _specPow: 100
     m_Colors:
-    - _RimColor: {r: 0.035294123, g: 0.2627451, b: 0.11456199, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.9866247, g: 1, b: 0, a: 1}
     - _SpecCol: {r: 0.78964937, g: 0.8584906, b: 0.8413152, a: 1}
   m_BuildTextureStacks: []
